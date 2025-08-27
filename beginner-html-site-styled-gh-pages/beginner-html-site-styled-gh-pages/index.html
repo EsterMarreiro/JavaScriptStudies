@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+
+    <script src="javascript.js"></script> <!-- linking an external JavaScript file -->
+  </head>
+  <body>
+
+    <script>
+
+      console.log("Hello, world!"); // this will print the text in the console of the browser
+
+      let name; // Declare a variable
+      name = "John"; // Assign a value to the variable
+      console.log(name); // outputs "John" to the console
+      let surname = "Doe";
+      console.log(name);
+      console.log(surname);
+
+      let age = 11;  // Declare variables 
+      console.log(age); // outputs 11 to the console
+      age = 54; // No need to use 'let' again, 'cause we are just reassigning the variable'
+      console.log(age);  // The previous log will still show 11, this one will show 54
+
+      let person = 'Bob', years = 25, message = 'Hello'; // multiple variables declaration in one line
+
+      let user = 'John'
+        , number = 25
+        , text = 'Hello';  // multiple variables declaration in multiple lines using the comma-first style
+
+      const pi = 3.14;  // constant variable, can't be reassigned
+      // pi = 10; // this will cause an error
+      console.log(pi); 
+
+      var city = "New York"; // old way to declare variables, avoid using it
+
+      console.log("My name is " + name + " " + surname + " and I am " + age + " years old."); // string concatenation 
+
+      console.log((3 + 2) - 76 * (1 + 1)) // math operations. It returns -147
+
+      alert(pi + " pi"); // this will show a pop-up window with the value of pi
+
+      let $ = 1; // declared a variable with the name "$"
+      let _ = 2; // and now a variable with the name "_"
+
+      alert($ + _); // 3
+
+      // let 1a; // cannot start with a digit
+
+      // let my-name; // hyphens '-' aren't allowed in the name
+
+      // JavaScript is case-sensitive
+
+
+      // ------------------  UPPER CASE CONSTANTS ------------------
+
+      const COLOR_RED = "#F00";
+      const COLOR_GREEN = "#0F0";
+      const COLOR_BLUE = "#00F";
+      const COLOR_ORANGE = "#FF7F00";
+
+      // ...when we need to pick a color
+      let color = COLOR_ORANGE;
+      alert(color); // #FF7F00
+
+      // capital-named constants are only used as aliases for “hard-coded” values. 
+      // Being a “constant” just means that a variable’s value never changes. 
+      // But some constants are known before execution (like a hexadecimal value for red) 
+      // and some constants are calculated in run-time, during the execution, 
+      // but do not change after their initial assignment.
+
+    </script>
+    
+    
+    
+    <h1>Mozilla is cool</h1>
+    <img src="images/firefox-icon.png" alt="The Firefox logo: a flaming fox surrounding the Earth.">
+
+    <p>At Mozilla, we’re a global community of</p>
+
+    <ul> <!-- changed to list in the tutorial -->
+      <li>technologists</li>
+      <li>thinkers</li>
+      <li>builders</li>
+    </ul>
+
+    <p>working together to keep the Internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.</p>
+
+    <p>Read the <a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a> to learn even more about the values and principles that guide the pursuit of our mission.</p>
+  </body>
+</html>
