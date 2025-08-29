@@ -73,6 +73,200 @@
       // and some constants are calculated in run-time, during the execution, 
       // but do not change after their initial assignment.
 
+
+// ------------------  CODIGO DOUGLAS ------------------
+
+      
+
+//criando variáveis
+const a = 2;
+let b = 3;
+
+//a = 4; --> const não permite novas atribuições
+b = 4; // let permite novas atribuições
+
+//criando com type
+const nomePessoa: string = "João";
+const idade: number = 30;
+let isProfessor: boolean = true;
+isProfessor = false;
+let salario = 3500; //o type tentará inferir o tipo do dado
+let variavelDoida: any; //tipo coringa. Existe, mas é desaconselhado
+variavelDoida = "agora sou uma string";
+variavelDoida = 5; // agora sou um número
+
+/////////////////
+
+// o padrão para strings no ts e js são as aspas duplas
+
+// Caso o tipo não seja dado, o typescript infere em tempo de COMPILAÇÃO o tipo ao valor atribuido
+
+let exemplo = 10;
+// exemplo = '10'; //cannot assign string to a type number
+
+//arrays - padrão é criar arrays com const. O ; não é necessário. Extensão prettier code - ao salvar (ctrl+s) o prettier formata o código. Não corrige erro. 
+const numeros: number[] = [1, 2, 3, 4];  // colchetes são o padrão para arrays ou listas
+const nomes: string[] = ["João", "Maria", "Pedro"];
+const nomes2: Array<string> = ["Ana", "Carlos", "Fernanda"]; //outra forma de tipar arrays, usando a classe array 
+
+//////////////////////
+
+//union types  - une varios tipos a uma variável
+let temEndereco: string | boolean;  // não é o padrão 
+//console.log(temEndereco); --> undefined
+temEndereco = "s";
+temEndereco = true;
+
+let cupomDesconto: string | undefined;  // dá a permissão para utilizar um undefined
+cupomDesconto = "10OFF";
+cupomDesconto = undefined;
+
+/////////////////////
+
+// mandar uma string vazia é ruim, pode ser proposital ou pode ser um sinal de bug
+
+//literals
+let statusPedido: "pendente" | "em andamento" | "concluído";
+//statusPedido = "Pendente"; --> ERRO
+statusPedido = "em andamento";
+//statusPedido = "cancelado"; --> erro
+
+let movimentacaoPersonagem: "w" | "a" | "s" | "d";
+
+//////////////////////
+
+//criando tipos
+
+type Aluno = {
+  nome: string;
+  curso: string;
+  idade?: number;
+};
+
+//objetos ---> JSON  --json é javascript  -- o símbolo universal de objeto são as chaves
+const aluno1: Aluno = {
+  nome: "Pedro",
+  curso: "CC",
+  idade: 30,
+};
+
+const aluno2: Aluno = {
+  nome: "Maria",
+  curso: "Engenharia",
+};
+
+///////////////
+
+//Strings
+const str1: string = "Oi," + aluno2.nome + ", bom dia";
+const str2: string = `Oi, ${aluno2.nome}, bom dia`;  // a crase é como se fosse uma f string. Strings formatadas
+
+
+////////////////
+
+//if, else
+
+let temPermissao: boolean;
+
+if (aluno1.idade && aluno1.idade >= 18) {
+  temPermissao = true;
+} else {
+  temPermissao = false;
+}
+
+temPermissao = aluno1.idade && aluno1.idade >= 18 ? true : false;
+
+////////////////
+
+//loops
+
+let i: number = 0;
+
+while (i < 10) {
+  i++;
+}
+
+for (let j: number = 0; j < numeros.length; j++) {
+  console.log(numeros[j]);
+}
+
+for (let numero of numeros) {  // mesma coisa do for in
+  //read only   [foreach]  -- não consegue alterar os valores enquant roda
+  console.log(numero);
+}
+
+//////////////////
+
+//funções
+
+function soma(a: number, b: number): number {
+  return a + b;
+}
+
+const soma2 = function (a: number, b: number): number {
+  return a + b;
+};
+
+const soma3 = (a: number, b: number): number => {
+  //arrow function
+  return a + b;
+};   // Domine esse jeito. É o jeito mais utilizado
+
+console.log(soma(2, 3));
+console.log(soma2(2, 3));
+console.log(soma3(2, 3));
+
+////////////////////////////
+
+//arrays
+
+const top3: string[] = ["js", "py", "ts"];
+const linguagem1: string = top3[0];
+const linguagem2: string = top3[1];
+const linguagem3: string = top3[2];
+
+const [lg1, lg2, lg3] = top3; //desestruturação
+
+const nomes3: string[] = [...nomes, "José"]; //spread operator
+
+//desestruturação de objetos
+
+const aluno3: Aluno = {
+  nome: "Ana",
+  curso: "ADS",
+};
+
+const { nome, curso } = aluno3;
+
+/////////////////
+
+// métodos de array --> forEach, map, filter, reduce   -- Domine. Acelera a manipulação de arrays
+
+const precos: number[] = [9.9, 19.9, 29.9];
+let somaPrecos: number = 0;
+
+precos.forEach((preco) => {
+  somaPrecos += preco;
+});
+
+const precosAumentados: number[] = precos.map((preco) => {
+  return preco * 1.1;
+});
+
+const precosFiltrados: number[] = precos.filter((preco) => {
+  return preco > 20;
+});
+
+
+//skeleton  mostra a estrutura da tabela, embaçada como se estivesse carregando (frontend)
+
+
+
+
+
+
+
+
     </script>
     
     
